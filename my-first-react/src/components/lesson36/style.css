@@ -1,0 +1,33 @@
+.container{
+    background-color: antiquewhite;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+}
+.main{
+    background-color: #ffafcc;
+    width: 40vw;
+    height: 40vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.box{
+    background-color: #ffcad4;
+    width: 9vw;
+    height: 9vw;
+    margin: 4px;
+    font-size: 5vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.box:hover{
+    cursor: pointer;
+    background-color: #ff99c8;
+}

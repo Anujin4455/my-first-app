@@ -1,0 +1,33 @@
+.container{
+    background-color: #fefae0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tic-tac{
+    background-color: #e0b1cb;
+    width: 600px;
+    height: 600px;
+    border-radius: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.box{
+    height: 29%;
+    width: 29%;
+    background-color: #be95c4;
+    border-radius: 16px;
+    font-size: 180px;
+    color: #9f86c0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box:hover{
+    background-color: #5e548e;
+    cursor: pointer;
+}

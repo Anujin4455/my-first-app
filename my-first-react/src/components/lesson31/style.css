@@ -1,0 +1,29 @@
+.container{
+    background-color: pink;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items: center ;
+    font-size: 24px;
+}
+.container h1 {
+    margin: 0;
+}
+.container button {
+    background-color: rgb(255, 0, 191) ;
+    color: azure;
+    border-radius: 8px;
+    padding-inline: 12px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    transition: 0.5s;
+    margin-left: 5px;
+}
+.container button:hover{
+    background-color: rgb(255, 127, 236);
+}
+.container input{
+    padding: 6px;
+    border-radius: 8px;
+}

@@ -1,0 +1,14 @@
+.box{
+    height: 100px;
+    width: 100px;
+    background-color: gold;
+    margin: 10px;
+  }
+  
+  
+  .small-box{
+    height: 50px;
+    width: 50px;
+    background-color: pink;
+    margin: 10px;
+  }
