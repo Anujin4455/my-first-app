@@ -6,7 +6,7 @@ const Movie = () => {
     <View style={styles.container}>
       <Image
       style={styles.img}
-      source={require('../assets/avengers.jpg')}
+      source={require('./avengers.jpg')}
        />
        <Text style={styles.name}>The Avengers</Text>
        <Text style={styles.decs}>Endgame is a 2019 American superhero film based on the Marvel Comics superhero team the Avengers.</Text>

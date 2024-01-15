@@ -1,5 +1,5 @@
 import { StatusBar, StyleSheet, Text, View } from 'react-native';
-import Kino from './components/Kino';
+import Kino from './app/movie/Kino';
 
 export default function App() {
   return (
