@@ -1,20 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
-import { Tabs } from 'expo-router';
+import { Stack } from 'expo-router';
 
-const _layout = () => {
-  return (
-    <View style={styles.container}>
-      <Tabs />
-    </View>
-  )
+export default function Layout() {
+    return <Stack screenOptions={{
+        headerShown
+            : false
+    }}>
+        <Stack.Screen name='home' options={{
+            title: 'Нүүр хуудас'
+        }} />
+    </Stack>;
 }
-
-export default _layout
-
-const styles = StyleSheet.create({
-  container:{
-    backgroundColor:'red',
-    flex:1
-  }
-})

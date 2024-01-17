@@ -1,15 +1,17 @@
-import { Footer, Header, Slot, Stack } from 'expo-router';
-import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Tabs } from 'expo-router/tabs';
+import { AntDesign } from '@expo/vector-icons';
 
-const Layout = () => {
-  return (
-    <View>
-      <Stack />
-    </View>
-  )
+export default function HomeLayout() {
+    return (
+        <Tabs screenOptions={{ headerShown: true, }} >
+            <Tabs.Screen name='index' options={{
+                title: 'Нүүр хуудас',
+                tabBarIcon: () => <AntDesign name="home" size={24} color="black" />
+            }} />
+            <Tabs.Screen name='profile' options={{
+                title: 'Профайл',
+                tabBarIcon: () => <AntDesign name="user" size={24} color="black" />
+            }} />
+        </Tabs>
+    );
 }
-
-export default Layout
-
-const styles = StyleSheet.create({})
