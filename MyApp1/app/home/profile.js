@@ -9,7 +9,7 @@ const profile = () => {
         <Image style={styles.img}
       source={require('../../assets/igPhoto/img.jpg')}>
       </Image>
-      
+       {/* Толгой хэсэг: Зураг, дагагч */}
       <View style={styles.textHuree}>
         <View style={styles.followsHuree}> 
             <Text style={styles.proText}>5</Text>
@@ -25,12 +25,12 @@ const profile = () => {
         </View>
       </View>
         </View>
-
+        {/* Bio */}
         <View style={styles.bio}> 
             <Text style={styles.bioName}>any_anyk</Text>
             <Text style={styles.bioDecs}>Henloow</Text>
         </View>
-
+         {/* Edit section */}
         <View style={styles.edit}> 
             <TouchableOpacity style={styles.editBtn}>
                 <Text style={styles.editText}>
