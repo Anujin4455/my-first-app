@@ -4,12 +4,11 @@ import React from 'react'
 const profile = () => {
   return (
     <View style={styles.container}>
-
+         {/* Толгой хэсэг: Зураг, дагагч */}
         <View style={styles.proHeader}>
         <Image style={styles.img}
       source={require('../../assets/igPhoto/img.jpg')}>
       </Image>
-       {/* Толгой хэсэг: Зураг, дагагч */}
       <View style={styles.textHuree}>
         <View style={styles.followsHuree}> 
             <Text style={styles.proText}>5</Text>
