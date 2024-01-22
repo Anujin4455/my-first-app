@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 
-const About = ({name,bio}) => {
+const About = ({name,bio,followers,following,postNum}) => {
   return (
     <View>
       {/* Толгой хэсэг: Зураг, дагагч */}
@@ -11,15 +11,15 @@ const About = ({name,bio}) => {
       </Image>
       <View style={styles.textHuree}>
         <View style={styles.followsHuree}> 
-            <Text style={styles.proText}>5</Text>
+            <Text style={styles.proText}>{postNum}</Text>
             <Text style={styles.proText}>Posts</Text>
         </View>
         <View style={styles.followsHuree}>
-            <Text style={styles.proText}>185</Text>
+            <Text style={styles.proText}>{followers}</Text>
             <Text style={styles.proText}>Followers</Text>
         </View>
         <View style={styles.followsHuree}>
-            <Text style={styles.proText}>94</Text>
+            <Text style={styles.proText}>{following}</Text>
             <Text style={styles.proText}>Following</Text>
         </View>
       </View>
