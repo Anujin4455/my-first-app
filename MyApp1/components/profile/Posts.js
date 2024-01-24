@@ -25,7 +25,8 @@ const Posts = ({ data }) => {
             {/* Tab content */}
             <PagerView onPageSelected={onPageChange} style={styles.pagerView} initialPage={0}>
                 <View key="1" style={styles.postContainer} >
-                    {data.map(post => <Post imgUrl={post.img} />)}
+                    {data.map(post =>             <Image source={{ uri: post.img }} style={styles.image} />
+)}
                 </View>
                 <View key="2" >
                     <Text>Second page</Text>
@@ -39,6 +40,11 @@ const Posts = ({ data }) => {
 export default Posts
 
 const styles = StyleSheet.create({
+    image:{
+        width:'32%',
+        aspectRatio: 1,
+        height:1
+    },
     postContainer: {
         flexDirection: 'row',
         justifyContent: 'space-around',
