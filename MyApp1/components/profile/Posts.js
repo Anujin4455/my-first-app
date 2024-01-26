@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import PagerView from 'react-native-pager-view';
- import Post from './Post';
+import { Link } from 'expo-router'
+import Post from './Post';
 const postImg = require('../../assets/igPhoto/postIcon.png')
 const userImg = require('../../assets/igPhoto/userIcon.png')
 const Posts = ({ data }) => {
@@ -24,10 +25,17 @@ const Posts = ({ data }) => {
             </View>
             {/* Tab content */}
             <PagerView onPageSelected={onPageChange} style={styles.pagerView} initialPage={0}>
+                {/* Zurgiin jagsaalt */}
                 <View key="1" style={styles.postContainer} >
-                    {data.map(post =>             <Image source={{ uri: post.img }} style={styles.image} />
-)}
+                    {data.map(post =>
+                        <Link href={'post/' + post.id} asChild>
+                            <TouchableOpacity style={styles.imgContainer}>
+                                <Image source={{ uri: post.img }} style={styles.image} />
+                            </TouchableOpacity>
+                        </Link>
+                    )}
                 </View>
+                {/* 2r huudas */}
                 <View key="2" >
                     <Text>Second page</Text>
                 </View>
@@ -40,10 +48,14 @@ const Posts = ({ data }) => {
 export default Posts
 
 const styles = StyleSheet.create({
-    image:{
-        width:'32%',
+    imgContainer: {
+        width: '32%',
         aspectRatio: 1,
-        height:1
+        height: 1,
+    },
+    image: {
+        width: '100%',
+        height: '100%'
     },
     postContainer: {
         flexDirection: 'row',

@@ -2,8 +2,7 @@ import { Stack } from 'expo-router';
 
 export default function Layout() {
     return <Stack screenOptions={{
-        headerShown
-            : false
+        headerShown: false,
     }}>
         <Stack.Screen name='home' options={{
             title: 'Нүүр хуудас'
