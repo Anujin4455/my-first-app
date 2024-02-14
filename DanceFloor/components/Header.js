@@ -17,7 +17,6 @@ export default Header
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        backgroundColor: 'green'
     },
     img: {
         height: 300,
