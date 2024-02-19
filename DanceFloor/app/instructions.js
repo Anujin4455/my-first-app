@@ -1,20 +1,21 @@
-import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
+import { Link } from 'expo-router';
 
 const instructions = () => {
     return (
         <View style={styles.huudas}>
             <ImageBackground
                 style={styles.text}
-                source={require('../assets/instructions.png')}
+                source={require('../assets/DanceFloor/instructions.png')}
             >
-                <TouchableOpacity style={styles.nextTxt}>
-                    <Text style={styles.next}>Next</Text>
-                </TouchableOpacity>
-
+                <Link href={"/emoji"} asChild>
+                    <TouchableOpacity style={styles.nextTxt}>
+                        <Text style={styles.next}>NEXT</Text>
+                    </TouchableOpacity>
+                </Link>
             </ImageBackground>
-
-        </View>
+        </View >
     )
 }
 
@@ -34,11 +35,11 @@ const styles = StyleSheet.create({
     },
     nextTxt: {
         paddingBottom: 50,
+        paddingRight: 50
     },
     next: {
         fontSize: 40,
-        backgroundColor: 'white',
-        borderRadius: 10,
-
+        backgroundColor: '#fefae0',
+        borderRadius: 10
     },
 })

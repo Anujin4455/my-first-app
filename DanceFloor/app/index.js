@@ -9,7 +9,7 @@ const Page = () => {
                 <TouchableOpacity>
                     <Image
                         style={styles.img}
-                        source={require('../assets/Dance Floor That Way Pink - A4 1.png')}
+                        source={require('../assets/DanceFloor/Dance Floor That Way Pink - A4 1.png')}
                     />
                 </TouchableOpacity>
             </Link>
