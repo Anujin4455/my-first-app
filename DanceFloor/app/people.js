@@ -4,13 +4,13 @@ import { Link } from 'expo-router'
 
 const people = () => {
 
-    
+
     const songoltuud = [
-        { id: 7, text: 'A.4-6people', style: { alignSelf: 'flex-start' } },
-        { id: 11, text: 'B.7-10people', style: { alignSelf: 'flex-end' } },
-        { id: 15, text: 'C.10-15people', style: { alignSelf: 'flex-start' } },
-        { id: 19, text: 'D.15-20people', style: { alignSelf: 'flex-end' } },
-    
+        { id: 7, text: 'A.2-7people', style: { alignSelf: 'flex-start' } },
+        { id: 11, text: 'B.8-11people', style: { alignSelf: 'flex-end' } },
+        { id: 15, text: 'C.12-15people', style: { alignSelf: 'flex-start' } },
+        { id: 19, text: 'D.16-19people', style: { alignSelf: 'flex-end' } },
+
 
     ]
     return (

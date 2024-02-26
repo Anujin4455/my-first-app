@@ -5,9 +5,11 @@ import { Link, useLocalSearchParams } from 'expo-router';
 const emoji = () => {
 
     const params = useLocalSearchParams()
- 
-    console.log('songoltId',   params.huniiToo);
-    const [songosonEmoji, setSetsongosonEmoji] = useState( {} )
+
+    console.log('songoltId', params.huniiToo);
+
+    const huniiTooLimit = params.huniiToo
+    const [songosonEmojinuud, setSetsongosonEmojinuud] = useState([])
     const emojis = [
         { id: 1, zurag: require('../assets/DanceFloor/1.png') },
         { id: 2, zurag: require('../assets/DanceFloor/2.png') },
@@ -28,8 +30,16 @@ const emoji = () => {
     ]
 
 
-    console.log('params.huniiToo',params.huniiToo);
+    console.log('params.huniiToo', params.huniiToo);
+    const emojiSongolt = (emoji) => {
+        console.log(emoji);
+        const shineEmojinuud = [...songosonEmojinuud, emoji.id]
+        console.log('shineEmojinuud', shineEmojinuud.length, shineEmojinuud);
+        if (shineEmojinuud.length <= huniiTooLimit) {
+            setSetsongosonEmojinuud(shineEmojinuud)
+        }
 
+    }
     return <View style={styles.emoji}>
 
         <ImageBackground
@@ -39,15 +49,19 @@ const emoji = () => {
             <View style={styles.foto}>
 
                 {emojis.map(emoji =>
-                    <TouchableOpacity onPress={()=> setSetsongosonEmoji( emoji )  } style={{backgroundColor: songosonEmoji.id === emoji.id ? 'green' : ''}}>
+                    <TouchableOpacity onPress={() => emojiSongolt(emoji)}
+
+                        style={{ backgroundColor: songosonEmojinuud.includes(emoji.id) ? 'green' : '' }}
+
+                    >
                         <Image source={emoji.zurag} style={styles.emojiFto} />
                     </TouchableOpacity>
                 )}
             </View>
-            <Link  href={{
-                        pathname: "/bairlalud",
-                        params: { huniiToo: params.huniiToo }
-                    }} asChild>
+            <Link href={{
+                pathname: "/bairlalud",
+                params: { huniiToo: params.huniiToo, songosonEmojinuud }
+            }} asChild>
                 <TouchableOpacity style={styles.nextEmj}>
                     <Text style={styles.nextEmo}>NEXT</Text>
                 </TouchableOpacity>
