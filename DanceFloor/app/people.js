@@ -3,16 +3,14 @@ import React from 'react'
 import { Link } from 'expo-router'
 
 const people = () => {
+
+    
     const songoltuud = [
-        { id: 'A', text: 'A.4-6people', style: { alignSelf: 'flex-start' } },
-        { id: 'B', text: 'B.7-10people', style: { alignSelf: 'flex-end' } },
-        { id: 'C', text: 'C.10-15people', style: { alignSelf: 'flex-start' } },
-        { id: 'D', text: 'D.15-20people', style: { alignSelf: 'flex-end' } },
-        // { id: 30, text: require('../assets/DanceFloor/4-6people.png') },
-        // { id: 31, text: require('../assets/DanceFloor/7-10people.png') },
-        // { id: 32, text: require('../assets/DanceFloor/10-15peole.png') },
-        // { id: 33, text: require('../assets/DanceFloor/15-20peole.png') },
-        // { id: 34, text: require('../assets/DanceFloor/byebye.png') },
+        { id: 7, text: 'A.4-6people', style: { alignSelf: 'flex-start' } },
+        { id: 11, text: 'B.7-10people', style: { alignSelf: 'flex-end' } },
+        { id: 15, text: 'C.10-15people', style: { alignSelf: 'flex-start' } },
+        { id: 19, text: 'D.15-20people', style: { alignSelf: 'flex-end' } },
+    
 
     ]
     return (
@@ -24,7 +22,10 @@ const people = () => {
             {songoltuud.map(songolt =>
 
                 <TouchableOpacity style={[songolt.style, styles.suuder]} >
-                    <Link href={"/bairlalud"}>
+                    <Link href={{
+                        pathname: "/emoji",
+                        params: { huniiToo: songolt.id }
+                    }}  >
                         <Text style={styles.songolt}>
                             {songolt.text}
                         </Text>

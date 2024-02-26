@@ -9,7 +9,7 @@ const instructions = () => {
                 style={styles.text}
                 source={require('../assets/DanceFloor/instructions.png')}
             >
-                <Link href={"/emoji"} asChild>
+                <Link href={"/people"} asChild>
                     <TouchableOpacity style={styles.nextTxt}>
                         <Text style={styles.next}>NEXT</Text>
                     </TouchableOpacity>

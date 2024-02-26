@@ -1,29 +1,34 @@
 import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import { Link } from 'expo-router';
+import React, { useState } from 'react'
+import { Link, useLocalSearchParams } from 'expo-router';
 
 const emoji = () => {
 
-
+    const params = useLocalSearchParams()
+ 
+    console.log('songoltId',   params.huniiToo);
+    const [songosonEmoji, setSetsongosonEmoji] = useState( {} )
     const emojis = [
-        { id: 1, emoji: require('../assets/DanceFloor/1.png') },
-        { id: 2, emoji: require('../assets/DanceFloor/2.png') },
-        { id: 3, emoji: require('../assets/DanceFloor/3.png') },
-        { id: 4, emoji: require('../assets/DanceFloor/4.png') },
-        { id: 5, emoji: require('../assets/DanceFloor/5.png') },
-        { id: 6, emoji: require('../assets/DanceFloor/6.png') },
-        { id: 7, emoji: require('../assets/DanceFloor/7.png') },
-        { id: 8, emoji: require('../assets/DanceFloor/8.png') },
-        { id: 9, emoji: require('../assets/DanceFloor/9.png') },
-        { id: 10, emoji: require('../assets/DanceFloor/10.png') },
-        { id: 11, emoji: require('../assets/DanceFloor/11.png') },
-        { id: 12, emoji: require('../assets/DanceFloor/12.png') },
-        { id: 13, emoji: require('../assets/DanceFloor/13.png') },
-        { id: 14, emoji: require('../assets/DanceFloor/14.png') },
-        { id: 15, emoji: require('../assets/DanceFloor/15.png') },
-        { id: 16, emoji: require('../assets/DanceFloor/16.png') },
+        { id: 1, zurag: require('../assets/DanceFloor/1.png') },
+        { id: 2, zurag: require('../assets/DanceFloor/2.png') },
+        { id: 3, zurag: require('../assets/DanceFloor/3.png') },
+        { id: 4, zurag: require('../assets/DanceFloor/4.png') },
+        { id: 5, zurag: require('../assets/DanceFloor/5.png') },
+        { id: 6, zurag: require('../assets/DanceFloor/6.png') },
+        { id: 7, zurag: require('../assets/DanceFloor/7.png') },
+        { id: 8, zurag: require('../assets/DanceFloor/8.png') },
+        { id: 9, zurag: require('../assets/DanceFloor/9.png') },
+        { id: 10, zurag: require('../assets/DanceFloor/10.png') },
+        { id: 11, zurag: require('../assets/DanceFloor/11.png') },
+        { id: 12, zurag: require('../assets/DanceFloor/12.png') },
+        { id: 13, zurag: require('../assets/DanceFloor/13.png') },
+        { id: 14, zurag: require('../assets/DanceFloor/14.png') },
+        { id: 15, zurag: require('../assets/DanceFloor/15.png') },
+        { id: 16, zurag: require('../assets/DanceFloor/16.png') },
     ]
 
+
+    console.log('params.huniiToo',params.huniiToo);
 
     return <View style={styles.emoji}>
 
@@ -34,12 +39,15 @@ const emoji = () => {
             <View style={styles.foto}>
 
                 {emojis.map(emoji =>
-                    <TouchableOpacity>
-                        <Image source={emoji.emoji} style={styles.emojiFto} />
+                    <TouchableOpacity onPress={()=> setSetsongosonEmoji( emoji )  } style={{backgroundColor: songosonEmoji.id === emoji.id ? 'green' : ''}}>
+                        <Image source={emoji.zurag} style={styles.emojiFto} />
                     </TouchableOpacity>
                 )}
             </View>
-            <Link href={"/people"} asChild>
+            <Link  href={{
+                        pathname: "/bairlalud",
+                        params: { huniiToo: params.huniiToo }
+                    }} asChild>
                 <TouchableOpacity style={styles.nextEmj}>
                     <Text style={styles.nextEmo}>NEXT</Text>
                 </TouchableOpacity>
