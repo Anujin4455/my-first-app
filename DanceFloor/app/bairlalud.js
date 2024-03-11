@@ -1,28 +1,55 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import { Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import React, { useEffect } from 'react'
 import { Link, useLocalSearchParams } from 'expo-router';
-
+import * as ScreenOrientation from 'expo-screen-orientation';
+import { emojis } from './emoji';
+async function changeScreen(direction) {
+    await ScreenOrientation.lockAsync(direction);
+}
 const bairlalud = () => {
+    useEffect(() => {
+        changeScreen(ScreenOrientation.OrientationLock.LANDSCAPE_LEFT)
 
+
+        return () => changeScreen(ScreenOrientation.OrientationLock.PORTRAIT)
+    }, [])
 
     const params = useLocalSearchParams()
-    console.log('params.huniiToo', params.huniiToo);
-    const huniiToo = params.huniiToo
-    let urgun = 100 / huniiToo
 
+    const huniiToo = params.huniiToo
+    const songosonEmojinuud = params.songosonEmojinuud
+    const songosonArray = params.songosonEmojinuud.split(',')
+
+    let urgun = 100 / huniiToo
+    console.log('+++songosonEmojinuud', songosonArray);
     urgun = urgun + '%'
 
     console.log('songoltId', params.songoltId);
     const nudniiToo = Array(huniiToo * 20).fill('')
     return (
-        <View style={styles.huree} >
-            {nudniiToo.map((obj, i) =>
+        <ScrollView  >
 
-                <TouchableOpacity style={[i % 2 === 0 ? styles.hairtsag1 : styles.hairtsag2, { width: urgun }]}>
-                </TouchableOpacity>
-            )}
+            <ScrollView horizontal contentContainerStyle={styles.emojiBairlal}>
+                {songosonArray.map(emojiId => {
+                    const emoji = emojis.find(obj => obj.id == emojiId)
+                    return <Image style={{ width: 70, height: 70, }} source={emoji.zurag} />
 
-        </View>
+                }
+                )}
+            </ScrollView>
+
+            <View style={styles.huree}>
+
+
+                {nudniiToo.map((obj, i) =>
+
+                    <TouchableOpacity style={[i % 2 === 0 ? styles.hairtsag1 : styles.hairtsag2, { width: urgun }]}>
+                        {/* <Text>{i}</Text> */}
+                    </TouchableOpacity>
+                )}
+
+            </View>
+        </ScrollView>
     )
 }
 
@@ -45,13 +72,23 @@ const styles = StyleSheet.create({
 
     },
     huree: {
-
+        paddingTop: StatusBar.currentHeight,
         flexDirection: 'row',
         flexWrap: 'wrap',
 
-        flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'flex-end'
 
     },
+    emojiBairlal: {
+        paddingTop: 12,
+        gap: 5,
+        justifyContent: 'center'
+        // justifyContent: 'space-around',
+        // flexDirection: 'row',
+
+        // flexWrap: 'wrap'
+
+
+    }
 })
