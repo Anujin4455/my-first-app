@@ -3,7 +3,7 @@ import React from 'react'
 import { Link, Redirect } from 'expo-router';
 const Page = () => {
     return (
-        <Redirect href={'home'} />
+        <Redirect href={'save'} />
     )
 }
 

@@ -91,7 +91,7 @@ const bairlalud = () => {
             </ScrollView>
 
 
-            <Link href={"/byebye"} asChild>
+            <Link href={"/save"} asChild>
                 <TouchableOpacity style={styles.nextEmj}>
                     <Text style={styles.nextEmo}>NEXT</Text>
                 </TouchableOpacity>
